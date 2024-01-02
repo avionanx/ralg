@@ -7,7 +7,6 @@ edition = "2021"
 
 [dependencies]
 petgraph = "0.6.4"
-eframe = "0.24.1"
 plotters = "0.3.5"
 env_logger = "0.10.1"
 rand = "0.8.5"

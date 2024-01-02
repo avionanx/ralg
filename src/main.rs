@@ -5,7 +5,7 @@ fn main() {
 
     // Create an undirected graph
     let mut g = UnGraph::<i32, ()>::default();
-    let k = 3;
+    let k = 2;
     // Add nodes with weights
     let node1 = g.add_node(1);
     let node2 = g.add_node(2);
@@ -15,11 +15,10 @@ fn main() {
     let node6 = g.add_node(6);
     // Add edges between nodes
     g.add_edge(node1, node2, ());
-    g.add_edge(node2, node3, ());
-    g.add_edge(node4, node5, ());
+    g.add_edge(node3, node4, ());
     g.add_edge(node5, node6, ());
-    let div = random_partition(&g, k, 1);
-    let div = minimize_edges(&g, div, 100);
+    let div = random_partition(&g, k, 14);
+    let div = minimize_edges(&g, div, 30);
     let cutsize = get_cut_size(&g, &div);
     //let cutsize = get_cut_size(&g,&div);
     println!("Result: {:?}, Partitions: {:?}", cutsize, &div);
